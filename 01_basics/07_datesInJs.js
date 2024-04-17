@@ -23,3 +23,6 @@ console.log(datee.toLocaleString());
 
 let date2= new Date("01-14-2024");
 console.log(date2.toLocaleString());
+
+let myTimeStamp =Date.now(); //used to identify who replied fast in poll
+console.log(myTimeStamp);
