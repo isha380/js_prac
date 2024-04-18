@@ -26,3 +26,7 @@ console.log(date2.toLocaleString());
 
 let myTimeStamp =Date.now(); //used to identify who replied fast in poll
 console.log(myTimeStamp);
+console.log(myCreateDate.getTime());// we can easily compare dates, converted into milli seconds
+console.log(Date.now()/1000); //converting in seconds but problem arise as it gives in decimal
+console.log(Math.floor(Date.now()/1000)); //solution of above problem
+
