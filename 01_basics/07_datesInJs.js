@@ -30,3 +30,8 @@ console.log(myCreateDate.getTime());// we can easily compare dates, converted in
 console.log(Date.now()/1000); //converting in seconds but problem arise as it gives in decimal
 console.log(Math.floor(Date.now()/1000)); //solution of above problem
 
+let newDate = new Date();
+console.log(newDate);
+console.log(newDate.getDay());
+
+
