@@ -56,13 +56,13 @@ function loginUserMessage(userName ){
 
     //below example and above give the same answer as the !(not) gives the opposite value
 
-}
     if(userName===undefined){
         console.log("please enter a message");
         return ;
     }
     return `${userName} just logged in`;
-
+}
+   
 
 console.log(loginUserMessage()); //output comes undefined not null
 // console.log(loginUserMessage(" ishaa"));
@@ -74,3 +74,9 @@ function loginUserMsg(userName ="unknown user"){
 
 }
 console.log(loginUserMsg()); 
+
+//------------------------------------------------------------------------------
+function one(){
+    console.log("isha party");
+}
+one();
