@@ -34,3 +34,17 @@
     }
   })
   console.log(newNumber);
+
+//---------------------------------------------------------------------
+const books=[
+  {title:'book 1',genre:'non-fiction',publish:1900,edition:2010},
+  {title:'book 2',genre:'history',publish:1967,edition:2012},
+  {title:'book 3',genre:'non-fiction',publish:1910,edition:2013},
+  {title:'book 4',genre:'science',publish:1900,edition:2012},
+  {title:'book 5',genre:'fiction',publish:1870,edition:2015},
+  {title:'book 6',genre:'history',publish:2000,edition:2011},
+  {title:'book 7',genre:'science',publish:2004,edition:2020}
+];
+
+const userBooks= books.filter((B) =>B.genre ==='history');
+console.log(userBooks);
