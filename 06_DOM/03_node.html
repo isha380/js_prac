@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+   <script>
+      const div= document.createElement('div');
+      console.log(div);
+      div.className="praragraph";
+    //   div.id= "ishaID";
+      div.id=Math.round(Math.random()*10+1);
+      div.setAttribute("title","isha js practice");
+      div.style.backgroundColor="purple";
+      div.style.color="yellow";
+      div.style.padding="20px";
+    //   div.innerText="hi programmers this is the paragraph written by div.innerHtml";
+       const addText= document.createTextNode("this is paragraph write using document.createTextNode");
+       div.appendChild(addText);
+
+       //add or attaching the document
+       document.body.appendChild(div);
+   </script>
+</html>

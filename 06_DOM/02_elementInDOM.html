@@ -7,6 +7,7 @@
 </head>
 <body style="background-color: black;color: #fff;">
     <div class="parent">
+        
         <div class="day">sunday</div>
         <div class="day">monday</div>
         <div class="day">tuesday</div>
@@ -15,13 +16,22 @@
     <script>
         // html collection is array like property
         const parent = document.querySelector('.parent');
-        console.log(parent);
-        console.log(parent.children);
-        console.log(parent.children[1].innerHtml);
+        // console.log(parent);
+        // console.log(parent.children);
+        // console.log(parent.children[1].innerHtml);
 
-        for(let i=0;i<parent.children.length;i++){
-            console.log(parent.children[i].innerHTML);
-        }
+        // for(let i=0;i<parent.children.length;i++){
+        //     console.log(parent.children[i].innerHTML);
+        // }
+
+        parent.children[1].style.color="orange";
+        console.log(parent.firstElementChild)
+        console.log(parent.lastElementChild);
+
+       const DayOne= document.querySelector('.day');
+        console.log(DayOne.parentElement);
+     console.log(DayOne.nextElementSibling);
+     console.log("Nodes:", parent.childNodes);
     </script>
 </body>
 </html>
