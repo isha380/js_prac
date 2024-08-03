@@ -11,13 +11,44 @@
     </ul>
 </body>
 <script>
+
+//appending new language using function
+
+ // this function traverse to each node, traverse the whole tree
     function addLanguage(langName){
         const li= document.createElement('li');
         li.innerHTML =`${langName}`
         document.querySelector('.language').appendChild(li)
     }
+    addLanguage("python");
+    addLanguage("c++");
 
-    addLanguage("python")
-    addLanguage("c++")
+    // this function  optimize the process
+    function optimalWay(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+       document.querySelector('.language').appendChild(li);
+    }
+
+    optimalWay("myLanguage");
+    optimalWay("java");
+
+    //edit the element 
+    const Second = document.querySelector("li:nth-child(2)")
+    // Second.innerHTML="c#";
+    const newLI = document.createElement('li');
+    newLI.textContent ="mOJO Dear";
+    Second.replaceWith(newLI);
+
+    //EDIT
+    const thirdLang= document.querySelector("li:nth-child(3)");
+    thirdLang.outerHTML ='<li>Typescript</li>';
+    
+    //remove
+    const lastlang= document.querySelector('li:last-child');
+    lastlang.remove();
+
+    
+
 </script>
 </html>
