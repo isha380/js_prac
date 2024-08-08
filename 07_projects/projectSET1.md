@@ -51,6 +51,7 @@ const form = document.querySelector('form')
 /* this usecase will give empty value as we trying to get the value before it has been submitted */
 //  const height= parseInt(document.querySelector('#height').value);
 //when form is submitted either it is submitted in post or get method and sends the values to the url or server which we need to stop 
+const form=document.querySelector('form');
 form.addEventListener('submit',function(e){
   e.preventDefault();
   const height= parseInt(document.querySelector('#height').value);
@@ -64,9 +65,31 @@ form.addEventListener('submit',function(e){
   }else{
    const bmi= (weight/((height*height)/10000)).toFixed(2);
     //showing the result
-  results.innerHTML=`<span>${bmi}</span>`;
+    if(bmi<18.6){
+      results.innerHTML=`<span>${bmi}</span><br><h1>under weight</h1>`;
+    }else if(bmi>18.6 && bmi<24.9){
+      results.innerHTML=`<span>${bmi}</span><br><h1>Normal weight</h1>`;
+    }else{
+      results.innerHTML=`<span>${bmi}</span><br><h1>over weight</h1>`;
+    }
+  
   }
   
 });
 
 ```
+
+## project 3 -> Digital clock
+``` javascript
+const clock= document.querySelector('#clock');
+
+//setInterval() function is commonly used to set a delay for functions that are executed again and again, such as animations
+
+setInterval(function(){
+  const date = new Date();
+  clock.innerHTML=date.toLocaleTimeString();
+},1000)
+
+```
+# project 4 ->
+
