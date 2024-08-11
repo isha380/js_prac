@@ -92,4 +92,71 @@ setInterval(function(){
 
 ```
 # project 4 ->
+```javascript
+const randomNumber = (parseInt(Math.random()*100+1));
+const userInput = document.querySelector('#guessField');
+const submit =document.querySelector('#subt');
+const guessSlot = document.querySelector('.guesses');
+const remaining =document.querySelector('.lastResult');
+const lowOrHigh=document.querySelector('.lowOrHi');
+const startOver=document.querySelector('.resultParas');
+const p= document.createElement('p');
+let prevGuess=[];
+let attemptGuess=1
+let playGame= true;
+
+if(playGame){
+  submit.addEventListener('click',function(e){
+    e.preventDefault();
+    const guess= parseInt(userInput.value);
+    console.log(guess);
+    validateGuess(guess);
+    
+  })
+}
+function validateGuess(guess){
+  if(isNaN(guess)){
+    alert("please give a valid number!");
+  }else if(guess<1){
+    alert("please give greater than 1 number!");
+  }else if(guess>1){
+    alert("please give less than 100 number!");
+  }else{
+    prevGuess.push(guess);
+    if(attemptGuess === 1){
+      displayGuess(guess);
+      displayMessage(`GAME OVER! random number was ${randomNumber}`);
+      endGame();
+    }else{
+      displayGuess(guess);
+      checkGuess(guess);
+    }
+  }
+}
+function checkGuess(guess){
+  if(guess=== randomNumber){
+    displayMessage("you guessesd it Correct");
+    endGame();
+  }else if(guess< randomNumber){
+    displayMessage("number is TOOOO LOW");
+  }else if(guess>randomNumber){
+    displayMessage("number is TOOOO HIGH");
+}
+function displayMessage(msg){
+  //
+}
+function displayGuess(guess){
+  userInput.value='';
+  guessSlot.innerHTML +=`${guess}`;
+  attemptGuess++;
+  remaining.innerHTML =`${11- attemptGuess}`
+}
+function newGame(){
+  //
+}
+function endGame(){
+  //
+}
+
+```
 
