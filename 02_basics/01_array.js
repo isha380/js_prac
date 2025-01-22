@@ -14,7 +14,7 @@ const Array=[0,1,2,3,4,5];
 
 //unshift adds value from the start that causes to shift all the array 
 // Array.unshift(44);
-//we give argument in shift but not in shift
+//we give argument in unshift but not in shift
 // console.log(Array); 
 
 Array.shift();
