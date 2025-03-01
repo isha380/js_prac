@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #414141 ; color: aliceblue;">
+    <h2>Wonderful image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="astro" src="../image/astro2.jpg" alt="photoshop"></li>
+            <li><img width="200px" id="landing" src="../image/lynx_landing.png" alt=""></li>
+            <li><img width="200px" id="screen" src="../image/Screenshot (304).png" alt=""></li>
+            <li><img width="200px" id="astro2" src="../image/pizza.png" alt=""></li>
+            <li><img width="200px" id="astro3" src="../image/selroti.png" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('astro').onclick=function(){
+    //     alert("astro clciked");
+    // }
+    // document.getElementById('astro').addEventListener('click',function(e){
+    //     console.log("hello hehe isha");
+    // })
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("You have clicked the IMAGE");
+    // })
+    /*
+        notes:
+        Pointer events, we mostly get browser events and environment events(where is the position of mouse,where did mouse clicked) 
+        Why pointer events are better than mouse events ?
+    
+            Pointer events and mouse events are both used for handling user interactions with a webpage, such as clicks, hover, and scrolling.However, pointer events are generally 
+            considered to be better than mouse events for several reasons:
+    Pointer events provide a more consistent experience across devices: Pointer events are designed to work with a wide range of input devices, including touchscreens, mouse, and stylus. 
+    Pointer events provide more information: Pointer events provide more information about the input device, such as its type (e.g. mouse, touch, pen), pressure, and tilt. 
+    Pointer events are more efficient: Pointer events are designed to be more memory-efficient and have lower overhead than mouse events. 
+    Pointer events are more flexible: Pointer events are more flexible than mouse events in that they can be used to handle both single and multi-touch interactions.*/
+    document.getElementById('images').addEventListener('click', function (e) {
+        console.log(e);
+    }, false)
+
+</script>
+
+</html>
