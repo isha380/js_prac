@@ -16,7 +16,7 @@
             <li><img width="200px" id="screen" src="../image/Screenshot (304).png" alt=""></li>
             <li><img width="200px" id="astro2" src="../image/pizza.png" alt=""></li>
             <li><img width="200px" id="astro3" src="../image/selroti.png" alt=""></li>
-            <li><a style="color: aliceblue;" href="https://google.com">Google</a></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
         </ul>
     </div>
 </body>
@@ -40,11 +40,47 @@
     Pointer events provide a more consistent experience across devices: Pointer events are designed to work with a wide range of input devices, including touchscreens, mouse, and stylus. 
     Pointer events provide more information: Pointer events provide more information about the input device, such as its type (e.g. mouse, touch, pen), pressure, and tilt. 
     Pointer events are more efficient: Pointer events are designed to be more memory-efficient and have lower overhead than mouse events. 
-    Pointer events are more flexible: Pointer events are more flexible than mouse events in that they can be used to handle both single and multi-touch interactions.*/
-    document.getElementById('images').addEventListener('click', function (e) {
-        console.log(e);
-    }, false)
+    Pointer events are more flexible: Pointer events are more flexible than mouse events in that they can be used to handle both single and multi-touch interactions.
+    
+    different event property:
+    #type:
+    The type event property returns the type of the triggered event.
 
+    
+    
+    */
+   /*
+    document.getElementById('images').addEventListener('click', function (e) {
+        console.log("clicked inside the ul");
+    }, false)
+    document.getElementById('landing').addEventListener('click', function (e) {
+        console.log("landing page clicked");
+        e.stopPropagation();
+    }, false)
+    document.getElementById('google').addEventListener('click', function (e) {
+        console.log("Google page clicked");
+        e.preventDefault();
+        e.stopPropagation();
+    }, false)
+    */
+   document.querySelector('#images').addEventListener('click',function(e){
+    console.log(e.target.tagName);
+if(e.target.tagName==='IMG'){
+    let removeImg=e.target.parentNode
+     removeImg.remove();
+    // removeImg.parentNode.removeChild(removeImg)  {removeimg ahile li ma x aba tesko parentnode matlab ul ma janx ani removechild garepaxi jun ho tyo remove bhairako x}
+}
+   })
+   
+/* elements tracking from inside to outside is called event propagation
+Bubbling:
+When an event happens on a component, it first runs the event handler on it, then on its parent component, then all the way up on other ancestors’ components.
+Capturing
+It is the opposite of bubbling. The event handler is first on its parent component and then on the component where it was actually wanted to fire that event handler. In short, it means that the event is first captured by the outermost element and propagated to the inner elements. It is also called trickle down.
+
+stopPropagation() method:
+The stopPropagation() method of the Event interface prevents further propagation of the current event in the capturing and bubbling phases. It does not, however, prevent any default behaviors from occurring; for instance, clicks on links are still processed. If you want to stop those behaviors, see the preventDefault() method. It also does not prevent propagation to other event-handlers of the current element. If you want to stop those, see stopImmediatePropagation().
+*/
 </script>
 
 </html>
