@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>code with me</h1>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    const sayIsha=function(){
+        console.log("Isha is fullstack developer");
+    }
+    const change=function(){
+        document.querySelector('h1').innerHTML="best developer";
+    } 
+    const stopChange=setTimeout(change,1000);
+    // clearTimeout(stopChange)
+    //setTimeout(sayIsha,2000) //it is a method and also calls api
+     document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(stopChange)
+        console.log("IT HAS BEEN STOPPED!!")
+     })
+    </script>
+</html>
