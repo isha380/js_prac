@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121;">
+    <!-- 
+    The XMLHttpRequest.readyState property returns the state an XMLHttpRequest client is in. 
+    An XHR client exists in one of the following states:
+
+         0 (UNSENT)	The request is created but not yet initialized (open() not called).
+         1 (OPENED)	open() has been called, but send() has not been called yet.
+         2 (HEADERS_RECEIVED)	send() has been called, and the server has responded with headers.
+         3 (LOADING)	The request is in progress; the response is being received but not fully loaded.
+         4 (DONE)	The operation is complete, and the response is fully received. -->
+</body>
+<script>
+   /* XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve 
+    data from a URL without having to do a full page refresh. This enables a Web page to 
+    update just part of a page without disrupting what the user is doing
+
+    The readyState property holds the status of the XMLHttpRequest.
+
+    The onreadystatechange property defines a function to be executed when the readyState changes.
+    */
+    const requestUrl = 'https://api.github.com/users/isha380'
+    const xhrisha = new XMLHttpRequest();
+    xhrisha.open('GET', requestUrl);
+    xhrisha.onreadystatechange =function(){
+        console.log(xhrisha.readyState);
+        if(xhrisha.readyState === 4){
+            const data =JSON.parse(this.responseText);
+           
+            console.log(data.followers);
+        }
+    }
+    
+    xhrisha.send();
+    //console.log is debugging tool, browser web developer tool
+    
+</script>
+
+</html>
