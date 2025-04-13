@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random pw </title>
+</head>
+
+<body style="background-color: rgb(62, 134, 154);">
+    <h1>Random Password</h1>
+    <input type="text" placeholder="new pw" id="random-pw"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+        viewBox="0 0 36 36">
+        <path fill="currentColor"
+            d="M27 3.56A1.56 1.56 0 0 0 25.43 2H5.57A1.56 1.56 0 0 0 4 3.56v24.88A1.56 1.56 0 0 0 5.57 30h.52V4.07H27Z"
+            class="clr-i-solid clr-i-solid-path-1" />
+        <rect width="23" height="28" x="8" y="6" fill="currentColor" class="clr-i-solid clr-i-solid-path-2" rx="1.5"
+            ry="1.5" />
+        <path fill="none" d="M0 0h36v36H0z" />
+    </svg>
+    <button id="btn" onclick="generate()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M11 15H6l7-14v8h5l-7 14z" />
+        </svg>Generate password </button>
+</body>
+<script>
+    const passwordBox = document.getElementById('random-pw');
+    const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const lowercase = "abcdefghijklmnopqrstuvwxyz";
+    const number = "0123456789";
+    const symbol = "!@#$%^&*()-_=+\\|{};:/?.>,";
+    const length = 12;
+    const allchars = uppercase + lowercase + symbol + number;
+
+    function generate() {
+        let password = "";
+        password += uppercase[Math.floor(Math.random() * uppercase.length)];
+        password += lowercase[Math.floor(Math.random() * lowercase.length)];
+        password += number[Math.floor(Math.random() * number.length)];
+        password += symbol[Math.floor(Math.random() * symbol.length)];
+        while (length > password.length) {
+            password += allchars[Math.floor(Math.random() * allchars.length)];
+        }
+        passwordBox.value = password;
+    }
+</script>
+
+</html>
